@@ -1,0 +1,311 @@
+:root {
+  --putih: rgb(255, 252, 252);
+  --abu: rgb(136, 136, 136);
+}
+
+*,
+html {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--putih);
+}
+
+nav {
+  background-color: var(--putih);
+  border: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0%;
+  filter: opacity(0.8);
+  z-index: 2;
+}
+
+nav ul {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar-img {
+  padding: 10px;
+  width: 70px;
+  aspect-ratio: 3/3;
+  border-radius: 50px;
+  filter: grayscale(1);
+}
+
+.profil {
+  height: 100vh;
+  object-fit: cover;
+  padding: 0%;
+  margin: 0px 0px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  gap: 6rem;
+  row-gap: 2rem;
+}
+
+.img-content {
+  /* margin: 90px 0px 10px 0px; */
+  width: 25%;
+  border-radius: 50%;
+  align-items: center;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  filter: grayscale(1);
+  scale: 1;
+  transform: translateY(-2rem);
+  z-index: 1;
+  box-shadow: 0px 0px 4px 8px var(--abu);
+}
+
+.img-content:hover {
+  animation-name: foto;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.text-content {
+  font-size: x-large;
+  align-items: center;
+  display: flexbox;
+}
+
+.name {
+  display: flex;
+  gap: 5px;
+  border-bottom: 1px solid transparent;
+  font-size: large;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.personal {
+  margin: 10px 0px 0px 0px;
+  display: flex;
+  border-bottom: 1px solid transparent;
+  font-size: medium;
+}
+
+.ket {
+  align-items: center;
+  justify-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid transparent;
+  animation-name: typing;
+  animation-duration: 3s;
+  animation-timing-function: steps(24);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.contact {
+  padding: 4px;
+  margin: 20px 0px 0px 20px;
+  background-color: var(--abu);
+  width: 2rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 3px;
+  transition: all 500ms;
+}
+
+.contact:hover {
+  /* animation-name: contact;
+   animation-duration: 500ms;
+   animation-fill-mode:none;
+   /* animation-iteration-count:unset; */
+  /* animation-direction: alternate; */
+  box-shadow: 0px 0px 6px 4px black;
+  scale: 1.2;
+  background-color: var(--putih);
+  /* transform: translateY(2rem); */
+}
+
+button {
+  margin: 30px 0px 10px 0px;
+  padding: 10px 85px 10px 85px;
+  background-color: var(--abu);
+  border: none;
+  justify-content: center;
+  border-radius: 20px;
+  font-family: cursive;
+  transition: all 500ms;
+}
+
+button:hover {
+  box-shadow: 0px 0px 6px 4px black;
+  scale: 1.1;
+  background-color: var(--putih);
+}
+
+.about {
+  box-sizing: border-box;
+  background-color: var(--abu);
+  display: flex;
+  height: 100vh;
+  align-content: center;
+  justify-items: start;
+  gap: 1em;
+}
+
+.img-about {
+  display: flex;
+  overflow: hidden;
+}
+
+.img-about > img {
+  width: 30%;
+  align-items: center;
+  filter: grayscale(1);
+  aspect-ratio: 16/64;
+  object-fit: cover;
+  transition: all 700ms;
+  overflow: hidden;
+}
+
+.img-about > img:hover {
+  box-shadow: 5px 15px 10px 0px black;
+  aspect-ratio: 16/16;
+  scale: 1.5;
+  z-index: 1;
+}
+
+.text-about {
+  align-items: center;
+  align-content: center;
+  width: 50em;
+  margin: 0px 30px 0px 30px;
+  border: 0px solid transparent;
+  color: var(--putih);
+}
+
+.ketik {
+  text-decoration: blink;
+  animation-name: ketik;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.title-about {
+  overflow: hidden;
+  transition: all 200ms;
+  animation: title-about 3s steps(10) infinite alternate;
+}
+
+table {
+  background-color: var(--abu);
+  border-radius: 20px;
+  padding: 10px;
+  border: #000;
+  border-collapse: collapse;
+  margin: 5px;
+}
+
+th,
+td {
+  /* border: 3px solid black; */
+  border: #000;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+h1 {
+  color: black;
+  font-family: cursive;
+}
+
+th {
+  font-family: cursive;
+  font-size: larger;
+}
+
+@keyframes foto {
+  0% {
+    /* background-color: brown; */
+    scale: 1;
+    /* transform: translateY(-2rem); */
+    box-shadow: 0px 0px 4px 8px var(--abu);
+  }
+  100% {
+    /* background-color: aqua; */
+    scale: 1.1;
+    /* transform: translateY(-2rem); */
+    box-shadow: 0px 0px 11px 11px var(--abu);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
+    border-right: 3px solid transparent;
+  }
+  to {
+    width: 53%;
+    border-right: 3px solid var(--abu);
+  }
+}
+
+@keyframes title-about {
+  from {
+    width: 0%;
+    border-right: 3px solid transparent;
+  }
+  to {
+    width: 20%;
+    border-right: 3px solid var(--putih);
+  }
+}
+
+@keyframes ketik {
+  from {
+    opacity: 1.0;
+  }
+  to {
+    opacity: 0.0;
+  }
+}
+
+/* @keyframes contact {
+   from {
+      padding: 4px;
+      width: 2rem;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 3px;
+      box-shadow: 0px 0px 0px 0px black;
+   }
+   to {
+      padding: 4px;
+      width: 3rem;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 3px;
+      box-shadow: 0px 0px 6px 5px black;
+   }
+} */
